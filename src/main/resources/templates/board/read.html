@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Read</title>
+</head>
+<body>
+<div th:if="${board != null}">
+    <p th:text="'Title: ' + ${board.title}"></p>
+    <p th:text="'Content: ' + ${board.content}"></p>
+    <p th:text="'Writer: ' + ${board.writer}"></p>
+</div>
+<div th:unless="${board != null}">
+    <p>No board data available.</p>
+</div>
+</body>
+</html>

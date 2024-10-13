@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootTest
@@ -26,7 +28,13 @@ public class BoardRepositoryTests {
                 .build();
 
         Board result = boardRepository.save(board);
-        System.out.println(result);
+        System.out.println("등록되라..........." + result);
+    }
+
+    @Test
+    public void testSelectAll() {
+        List<Board> boardList = boardRepository.findAll();
+        System.out.println("게시판목록..................." + boardList);
     }
 
     @Test
@@ -49,5 +57,12 @@ public class BoardRepositoryTests {
 
         Board result = boardRepository.save(board);
         System.out.println("수정해라.........." + result);
+    }
+
+    @Test
+    public void testDelete() {
+        Long bno = 1L;
+
+        boardRepository.deleteById(bno);
     }
 }

@@ -27,4 +27,9 @@ public class Board {
 
     @Column(name = "register_date", nullable = false)
     private LocalDateTime registerDate;
+
+    public void change(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
 }
